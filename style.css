@@ -18,15 +18,15 @@ body {
 
 /* 3. LA CARTE EFFET VERRE (Glassmorphism) */
 .glass-card {
-    background: rgba(255, 255, 255, 0.05); /* Blanc très transparent */
-    backdrop-filter: blur(15px);           /* L'effet de flou est ici ! */
-    -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Bordure fine */
+    background: rgba(17, 17, 17, 0.6); /* Fond plus sombre et transparent */
+    backdrop-filter: blur(20px);      /* Augmente le flou derrière */
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1); 
     border-radius: 24px;
     padding: 40px;
-    width: 350px;
+    width: 380px;
     text-align: center;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6); /* Ombre portée */
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.7); /* Ombre plus forte */
 }
 
 /* 4. Photo de profil ronde */
@@ -51,10 +51,21 @@ body {
 }
 
 /* 6. LES BOUTONS DE LIENS */
-.links {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+.link-item {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 16px; /* Plus d'espace interne */
+    border-radius: 14px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.link-item:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: scale(1.02); /* Effet de zoom léger au survol */
+    border-color: rgba(255, 255, 255, 0.4);
 }
 
 .link-item {
@@ -83,4 +94,16 @@ body {
 .link-item span {
     font-size: 0.75rem;
     color: #666;
+}
+.bg-glow {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: #3897f0; /* Couleur bleue */
+    filter: blur(150px);  /* On l'étale au maximum */
+    opacity: 0.15;       /* On le rend très discret */
+    z-index: -1;         /* On le met DERRIÈRE le contenu */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
